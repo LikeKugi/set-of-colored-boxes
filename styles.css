@@ -1,0 +1,96 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f4f4;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    padding: 2rem;
+}
+
+/* Color grid container */
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Base color box styles */
+.color-box {
+    width: 100%;
+    height: 120px;
+    min-width: 120px;
+    min-height: 120px;
+    border-radius: 12px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.color-box:hover {
+    transform: translateY(-4px);
+    box-shadow:
+        0 10px 15px -3px rgba(0, 0, 0, 0.1),
+        0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual color boxes with different color formats */
+
+/* color1: Hexadecimal color value */
+.color1 {
+    background-color: #2563eb;
+}
+
+/* color2: RGB color value */
+.color2 {
+    background-color: rgb(34, 197, 94);
+}
+
+/* color3: Predefined (word) color value */
+.color3 {
+    background-color: steelblue;
+}
+
+/* color4: HSL color value */
+.color4 {
+    background-color: hsl(25, 95%, 53%);
+}
+
+/* color5: Background color set (using hex) */
+.color5 {
+    background-color: #dc2626;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .color-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .color-box {
+        height: 100px;
+        min-height: 100px;
+    }
+}
+
+@media (max-width: 320px) {
+    .color-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .color-box {
+        height: 100px;
+        min-height: 100px;
+    }
+}
